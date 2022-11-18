@@ -1,0 +1,42 @@
+package mercadorony;
+
+import java.util.Scanner;
+
+public class MercadoRony {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Atributos at = new Atributos();
+        ArrayId id = new ArrayId();
+        int count = 1;
+        int resp2 = 1;
+        while(resp2 ==1){
+        System.out.println("[1]Cadastrar Produto\n[2]Pesquisar Produto");
+        int resp = sc.nextInt();
+        if (resp == 1) {
+            sc.nextLine();
+            System.out.println("Nome do Produto: ");
+            at.setNome(sc.nextLine());
+            System.out.println("Insira Setor: ");
+            at.setSetor(sc.nextLine());
+            System.out.println("Fornecedor: ");
+            at.setFornecedor(sc.nextLine());
+            System.out.println("Estoque: ");
+            at.setEstoque(sc.nextInt());
+            sc.nextLine();
+            System.out.println("Preço: ");
+            at.setPreco(sc.nextLine());
+            id.arrayId(count, at.getNome(), at.getSetor(), at.getFornecedor(), at.getEstoque(), at.getPreco());
+            System.out.println(id.getArrayId(count));
+            
+        }if(resp ==2){
+            System.out.println("Digite o codigo que voce quer ver: ");
+            System.out.println(id.getArrayId(sc.nextInt()));
+        }
+        System.out.print("Voce quer continuar? [1] - Sim [2] - Não");
+        resp2 = sc.nextInt();
+        }
+        
+    }
+
+}
