@@ -1,0 +1,23 @@
+package mercadorony;
+
+
+public class ArrayId {
+    String arrayID [] [] = new String [8][8];
+    
+    
+    public void arrayId(int id, String nome, String setor, String fornecedor, int estoque, String preco){
+        Integer id2 = id;
+        Integer estoque2 = estoque;
+        this.arrayID[id][1] = id2.toString();
+        this.arrayID[id][2] = nome;
+        this.arrayID[id][3] = setor;
+        this.arrayID[id][4] = fornecedor;
+        this.arrayID[id][5] = estoque2.toString();
+        this.arrayID[id][6] = preco;
+        
+    } 
+    public String getArrayId(int id){
+        String frase;
+        return frase = "Código: "+arrayID[id][1]+ "\nNome: " + arrayID[id][2] + "\nSetor: "+arrayID[id][3] + "\nFornecedor: "+arrayID[id][4] + "\nEstoque: "+arrayID[id][5] + "\nPreço: "+arrayID[id][6] ;
+    }
+}
