@@ -11,7 +11,8 @@ public class MercadoRony {
         int count = 1;
         int resp2 = 1;
         while(resp2 ==1){
-        System.out.println("[1]Cadastrar Produto\n[2]Pesquisar Produto");
+        System.out.println("[1]Cadastrar Produto\n[2]Pesquisar Produto\n"
+                + "[3] - Remover Produto [4] - Atulizar Atributo do Produto");
         int resp = sc.nextInt();
         if (resp == 1) {
             sc.nextLine();
@@ -32,9 +33,24 @@ public class MercadoRony {
         }if(resp ==2){
             System.out.println("Digite o codigo que voce quer ver: ");
             System.out.println(id.getArrayId(sc.nextInt()));
+        }if(resp == 3){
+            System.out.println("Digite o codigo que voce quer remover: ");
+            int resp3 = sc.nextInt();
+            id.removerId(resp3);
+            System.out.println(id.getArrayId(resp3));
+            
+        }if(resp ==4){
+            System.out.println("Digite o codigo que voce quer atualizar");
+            int opcao = sc.nextInt();
+            System.out.println("Digite o que voce quer atulizar \n1 - Nome \n2 - Setor \n3 - Fornecedor \n4 - Estoque"
+                    + "\n5 - Preço ");
+            int opcao2 = sc.nextInt();
+            id.atualizarId(opcao, opcao2);
+            System.out.println(id.getArrayId(opcao));
         }
         System.out.print("Voce quer continuar? [1] - Sim [2] - Não");
         resp2 = sc.nextInt();
+        count++;
         }
         
     }
